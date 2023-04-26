@@ -1,0 +1,20 @@
+resources:
+
+https://www.w3schools.com/cs/index.php  --- used many of these for more background understanding.
+https://www.w3.org/  --- used for XML and finding the SVG namespace
+https://svgwg.org/svg2-draft/struct.html#Namespace  ----  SVG info
+https://svgwg.org/svg2-draft/refs.html#ref-xml-names  ---- SVG info
+https://www.flaticon.com/search?word=erase --- used to find icons
+https://www.dotnetperls.com/ --- more C# assistance and learning
+https://stackoverflow.com/questions/1060442/png-to-bmp-in-c-sharp  --- bitmap learning
+https://stackoverflow.com/questions/1053052/a-generic-error-occurred-in-gdi-jpeg-image-to-memorystream --- issue with memory stream for saving
+https://chat.openai.com/?model=gpt-4 --- assistance in modifying errors
+https://stackoverflow.com/questions/29717005/draw-a-rectangle --- select rectangle help.
+https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/getting-started-with-graphics-programming?view=netframeworkdesktop-4.8 -- lots of help dealing with graphics, also helped with using stream writer and XML writer
+https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc --- readme template
+
+chris diggins SVG editor program. 
+
+
+
+
