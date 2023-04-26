@@ -5,6 +5,11 @@ using System.Drawing.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+//Created By: Michael Bielawski
+//Paint Editor Final Project
+//CS321 - Advanced Programming Techniques
+//April 26th, 2023
+
 namespace PaintEditor
 {
     public partial class Form1 : Form
@@ -38,27 +43,21 @@ namespace PaintEditor
         public ShapeSelection ShapeSelection { get; } = new();
         public Bitmap Bitmap => _bitmap;
 
-
         public Form1()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             UpdatePanels();
-
             DoubleBuffered = true;
             _bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-
             InitializeContextMenu();
-
             _fillColor = fillColorDialog.Color;
             fillColorDialog.Color = Color.Black;
             outlineColorDialog.Color = Color.Black;
             markerColorDialog.Color = Color.Black;
-
             ModeSelection.ModeChanged += ModeSelectionWhenChanged;
             ModeSelection.Mode = Mode.Initial;
-
             ShapeSelection.TypeChanged += ShapeSelectionWhenChanged;
             ShapeSelection.Type = ShapeType.Initial;
         }
@@ -92,7 +91,6 @@ namespace PaintEditor
             {
                 markerLabel.Text = _markerSize.ToString();
             }
-
         }
 
         //----------------------------------------------------------------------------------------------------------------
@@ -123,6 +121,7 @@ namespace PaintEditor
                             g.DrawRectangle(selectionPen, _selectRect);
                         }
                     }
+
                     else if (_selectRect.Width > 0 && _selectRect.Height > 0)
                     {
                         g.FillRectangle(selectionBrush, _selectRect);
@@ -173,7 +172,6 @@ namespace PaintEditor
             {
                 _isDrawing = true;
                 RectStartPoint = e.Location;
-                //Invalidate();
             }
 
             if (ModeSelection.Mode == Mode.FreeDraw || ModeSelection.Mode == Mode.Eraser)
@@ -188,7 +186,11 @@ namespace PaintEditor
                 _startPoint = _endPoint = e.Location;
                 _currentPoint.X = e.X;
                 _currentPoint.Y = e.Y;
+            }
 
+            else if (ModeSelection.Mode == Mode.DrawShape && ShapeSelection.Type == ShapeType.Initial)
+            {
+                MessageBox.Show("Please select a shape before drawing! You can do so using 'Shape Selection' in the menu bar or by clicking the 'Draw Shape' drop down menu on the tool Strip.", "Pick a Shape first!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (e.Button == MouseButtons.Right)
@@ -212,7 +214,6 @@ namespace PaintEditor
                     Math.Abs(RectStartPoint.X - tempEndPoint.X),
                     Math.Abs(RectStartPoint.Y - tempEndPoint.Y));
                     pictureBox1.Invalidate();
-
                     if (_isMovingSelectedArea)
                     {
                         Point currentLocation = e.Location;
@@ -245,6 +246,7 @@ namespace PaintEditor
                             }
                         }
                     }
+
                     _startPoint = e.Location;
                     pictureBox1.Image = _bitmap;
                     pictureBox1.Refresh();
@@ -254,7 +256,6 @@ namespace PaintEditor
                 _y = e.Y;
                 _startPoint.X = e.X - _currentPoint.X;
                 _startPoint.Y = e.Y - _currentPoint.Y;
-
                 if (ModeSelection.Mode != Mode.Initial)
                 {
                     toolStripStatusLabel1.Text = " Pos: " + e.X + "," + e.Y;
@@ -267,7 +268,6 @@ namespace PaintEditor
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             _isDrawing = false;
-
             if (ModeSelection.Mode == Mode.Select)
             {
                 if (e.Button == MouseButtons.Left)
@@ -307,7 +307,6 @@ namespace PaintEditor
             {
                 _startPoint.X = _x - _currentPoint.X;
                 _startPoint.Y = _y - _currentPoint.Y;
-
                 using var shapePen = new Pen(_strokeColor, _strokeThickness);
                 using var shapeBrush = new SolidBrush(_fillColor);
                 if (ShapeSelection.Type == ShapeType.Ellipse)
@@ -321,7 +320,7 @@ namespace PaintEditor
                         g.DrawEllipse(shapePen, _currentPoint.X, _currentPoint.Y, _startPoint.X, _startPoint.Y);
                     }
 
-                    Shapes.Add(new ShapeDetails ()
+                    Shapes.Add(new ShapeDetails()
                     {
                         X = _currentPoint.X,
                         Y = _currentPoint.Y,
@@ -331,7 +330,7 @@ namespace PaintEditor
                         FillColor = fillColorDialog.Color,
                         Filled = fillEnabledToolStripMenuItem.Checked,
                         StrokeThickness = _strokeThickness,
-                        Type =  ShapeType.Ellipse
+                        Type = ShapeType.Ellipse
                     });
 
                     UpdateItemList_Shapes();
@@ -378,7 +377,6 @@ namespace PaintEditor
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Creating a new drawing will discard any unsaved changes. Do you want to continue?", "New Drawing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
             if (result == DialogResult.Yes)
             {
                 _bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -389,14 +387,11 @@ namespace PaintEditor
 
                 _undo.Clear();
                 _redo.Clear();
-
                 LineSegments.Clear();
                 TreeNodes.Clear();
                 Shapes.Clear();
-
                 itemTreeView.Nodes.Clear();
                 itemPropertyGrid.SelectedObject = null;
-
                 pictureBox1.Image = _bitmap;
                 pictureBox1.Invalidate();
             }
@@ -407,7 +402,10 @@ namespace PaintEditor
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "BMP (*.bmp)|*.bmp|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() != DialogResult.OK)
+            {
                 return;
+            }
+                
             var file = new Bitmap(openFileDialog.FileName);
             _bitmap = file;
             pictureBox1.Image = _bitmap;
@@ -419,7 +417,9 @@ namespace PaintEditor
             saveFileDialog1.Title = "Save Image";
             saveFileDialog1.Filter = "BMP files (*.bmp)|*.bmp|All files (*.*)|*.*";
             if (saveFileDialog1.ShowDialog() != DialogResult.OK)
+            {
                 return;
+            }
 
             string fileName = saveFileDialog1.FileName;
             _bitmap.Save(fileName);
@@ -451,7 +451,6 @@ namespace PaintEditor
         {
             ModeSelection.Mode = Mode.Select;
             pictureBox1.Cursor = Cursors.Hand;
-
         }
 
         private void drawShapeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -460,7 +459,6 @@ namespace PaintEditor
             pictureBox1.Cursor = Cursors.Cross;
             label4.Text = "Outline Thickness:";
             UpdatePanels();
-
         }
 
         private void freeDrawToolStripMenuItem_Click(object sender, EventArgs e)
@@ -477,6 +475,8 @@ namespace PaintEditor
             ModeSelection.Mode = Mode.Eraser;
             _markerColor = Color.White;
             pictureBox1.Cursor = Cursors.Cross;
+            label4.Text = "Eraser Thickness:";
+            UpdatePanels();
         }
 
         //----------------------------------------------------------------------------------------------------------------
@@ -529,10 +529,12 @@ namespace PaintEditor
                 {
                     _bitmap = new Bitmap(_undo.Peek());
                 }
+
                 else if (_undo.Count == 0)
                 {
                     _bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
                 }
+
                 pictureBox1.Image = _bitmap;
                 pictureBox1.Invalidate();
             }
@@ -627,28 +629,24 @@ namespace PaintEditor
         {
             _strokeThickness = 10;
             UpdatePanels();
-
         }
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
         {
             _strokeThickness = 20;
             UpdatePanels();
-
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
         {
             _strokeThickness = 40;
             UpdatePanels();
-
         }
 
         private void rectangleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ShapeRectangle();
             UpdatePanels();
-
         }
 
 
@@ -656,7 +654,6 @@ namespace PaintEditor
         {
             ShapeEllipse();
             UpdatePanels();
-
         }
 
         //----------------------------------------------------------------------------------------------------------------
@@ -667,9 +664,7 @@ namespace PaintEditor
         {
             var oldsel = itemTreeView.SelectedNode?.Name;
             itemTreeView.Nodes.Clear();
-
             TreeNodes.RemoveAll(node => node.Tag is LineSegment);
-
             foreach (LineSegment segment in LineSegments)
             {
                 TreeNode node = new TreeNode
@@ -677,7 +672,7 @@ namespace PaintEditor
                     Text = $"Start: {segment.Start}, End: {segment.End}",
                     Tag = segment
                 };
-              
+
                 TreeNodes.Add(node);
             }
 
@@ -685,7 +680,6 @@ namespace PaintEditor
             {
                 itemTreeView.Nodes.Add(node);
             }
-            
 
             if (oldsel != null)
             {
@@ -697,7 +691,6 @@ namespace PaintEditor
         {
             var oldsel = itemTreeView.SelectedNode?.Name;
             itemTreeView.Nodes.Clear();
-
             TreeNodes.RemoveAll(node => node.Tag is ShapeDetails);
 
             foreach (ShapeDetails s in Shapes)
@@ -727,12 +720,19 @@ namespace PaintEditor
             itemPropertyGrid.SelectedObject = null;
             var selected = itemTreeView.SelectedNode;
             if (selected == null)
+            {
                 return;
+            }
+
             var elem = selected.Tag as object;
             if (elem == null)
+            {
                 return;
+            }
+
             itemPropertyGrid.SelectedObject = elem;
         }
+
         //----------------------------------------------------------------------------------------------------------------
         //Help! ----------------------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------------------------
@@ -747,12 +747,10 @@ namespace PaintEditor
         private void MoveItem_Click(object sender, EventArgs e)
         {
             Bitmap bmp = (Bitmap)pictureBox1.Image;
-
             if (bmp != null)
             {
                 Rectangle clonedRect = new Rectangle(_selectRect.Location, _selectRect.Size);
                 _selectedArea = bmp.Clone(clonedRect, bmp.PixelFormat);
-
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
                     g.CompositingMode = CompositingMode.SourceCopy;
@@ -774,7 +772,6 @@ namespace PaintEditor
             {
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
-                    // Replace the selected area with a transparent color
                     g.CompositingMode = CompositingMode.SourceCopy;
                     using (Brush clearBrush = new SolidBrush(Color.FromArgb(0, 0, 0, 0)))
                     {
@@ -784,7 +781,6 @@ namespace PaintEditor
 
                 _selectRect.Width = 0;
                 _selectRect.Height = 0;
-                // Refresh the PictureBox to show the updated image
                 pictureBox1.Invalidate();
             }
         }
@@ -794,15 +790,12 @@ namespace PaintEditor
             if (_selectedArea != null)
             {
                 Bitmap bmp = (Bitmap)pictureBox1.Image;
-
                 if (bmp != null)
                 {
                     using (Graphics g = Graphics.FromImage(bmp))
                     {
                         g.DrawImage(_selectedArea, _selectRect);
                     }
-
-                    //pictureBox1.Image = bmp;
                 }
 
                 _selectedArea.Dispose();

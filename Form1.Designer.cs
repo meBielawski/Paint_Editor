@@ -480,6 +480,7 @@
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
             toolStripButton1.Size = new Size(23, 40);
+            toolStripButton1.Text = "Undo";
             toolStripButton1.Click += undoToolStripMenuItem_Click;
             // 
             // toolStripLabel1
@@ -495,6 +496,7 @@
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
             toolStripButton2.Size = new Size(23, 40);
+            toolStripButton2.Text = "Redo";
             toolStripButton2.Click += redoToolStripMenuItem_Click;
             // 
             // toolStripLabel2
@@ -515,6 +517,7 @@
             fillColorToolStripButton.ImageTransparentColor = Color.Magenta;
             fillColorToolStripButton.Name = "fillColorToolStripButton";
             fillColorToolStripButton.Size = new Size(23, 40);
+            fillColorToolStripButton.Text = "Fill Color";
             fillColorToolStripButton.Click += fillColorToolStripButton_Click;
             // 
             // toolStripLabel3
@@ -530,6 +533,7 @@
             outlineColorToolStripButton.ImageTransparentColor = Color.Magenta;
             outlineColorToolStripButton.Name = "outlineColorToolStripButton";
             outlineColorToolStripButton.Size = new Size(23, 40);
+            outlineColorToolStripButton.Text = "Outline Color";
             outlineColorToolStripButton.Click += outlineColorToolStripButton_Click;
             // 
             // toolStripLabel4
@@ -545,6 +549,7 @@
             markerColorToolStripButton.ImageTransparentColor = Color.Magenta;
             markerColorToolStripButton.Name = "markerColorToolStripButton";
             markerColorToolStripButton.Size = new Size(23, 40);
+            markerColorToolStripButton.Text = "Marker Color";
             markerColorToolStripButton.Click += markerColorToolStripButton_Click;
             // 
             // toolStripLabel5
@@ -566,39 +571,40 @@
             brushWidthToolStripButton.ImageTransparentColor = Color.Magenta;
             brushWidthToolStripButton.Name = "brushWidthToolStripButton";
             brushWidthToolStripButton.Size = new Size(29, 40);
+            brushWidthToolStripButton.Text = "Marker Thickness";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(86, 22);
+            toolStripMenuItem1.Size = new Size(180, 22);
             toolStripMenuItem1.Text = "1";
             toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(86, 22);
+            toolStripMenuItem2.Size = new Size(180, 22);
             toolStripMenuItem2.Text = "5";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(86, 22);
+            toolStripMenuItem3.Size = new Size(180, 22);
             toolStripMenuItem3.Text = "10";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // toolStripMenuItem4
             // 
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(86, 22);
+            toolStripMenuItem4.Size = new Size(180, 22);
             toolStripMenuItem4.Text = "20";
             toolStripMenuItem4.Click += toolStripMenuItem4_Click;
             // 
             // toolStripMenuItem5
             // 
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(86, 22);
+            toolStripMenuItem5.Size = new Size(180, 22);
             toolStripMenuItem5.Text = "40";
             toolStripMenuItem5.Click += toolStripMenuItem5_Click;
             // 
@@ -616,40 +622,40 @@
             toolStripButton6.ImageTransparentColor = Color.Magenta;
             toolStripButton6.Name = "toolStripButton6";
             toolStripButton6.Size = new Size(29, 40);
-            toolStripButton6.Text = "toolStripButton6";
+            toolStripButton6.Text = "Outline Thickness";
             // 
             // toolStripMenuItem7
             // 
             toolStripMenuItem7.Name = "toolStripMenuItem7";
-            toolStripMenuItem7.Size = new Size(86, 22);
+            toolStripMenuItem7.Size = new Size(180, 22);
             toolStripMenuItem7.Text = "1";
             toolStripMenuItem7.Click += toolStripMenuItem7_Click;
             // 
             // toolStripMenuItem8
             // 
             toolStripMenuItem8.Name = "toolStripMenuItem8";
-            toolStripMenuItem8.Size = new Size(86, 22);
+            toolStripMenuItem8.Size = new Size(180, 22);
             toolStripMenuItem8.Text = "5";
             toolStripMenuItem8.Click += toolStripMenuItem8_Click;
             // 
             // toolStripMenuItem9
             // 
             toolStripMenuItem9.Name = "toolStripMenuItem9";
-            toolStripMenuItem9.Size = new Size(86, 22);
+            toolStripMenuItem9.Size = new Size(180, 22);
             toolStripMenuItem9.Text = "10";
             toolStripMenuItem9.Click += toolStripMenuItem9_Click;
             // 
             // toolStripMenuItem10
             // 
             toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(86, 22);
+            toolStripMenuItem10.Size = new Size(180, 22);
             toolStripMenuItem10.Text = "20";
             toolStripMenuItem10.Click += toolStripMenuItem10_Click;
             // 
             // toolStripMenuItem11
             // 
             toolStripMenuItem11.Name = "toolStripMenuItem11";
-            toolStripMenuItem11.Size = new Size(86, 22);
+            toolStripMenuItem11.Size = new Size(180, 22);
             toolStripMenuItem11.Text = "40";
             toolStripMenuItem11.Click += toolStripMenuItem11_Click;
             // 
@@ -671,6 +677,7 @@
             toolStripButton7.ImageTransparentColor = Color.Magenta;
             toolStripButton7.Name = "toolStripButton7";
             toolStripButton7.Size = new Size(23, 40);
+            toolStripButton7.Text = "Select";
             toolStripButton7.Click += selectToolStripMenuItem_Click;
             // 
             // toolStripLabel7
@@ -687,20 +694,20 @@
             toolStripButton3.ImageTransparentColor = Color.Magenta;
             toolStripButton3.Name = "toolStripButton3";
             toolStripButton3.Size = new Size(29, 40);
-            toolStripButton3.Text = "toolStripButton3";
+            toolStripButton3.Text = "Draw Shape";
             toolStripButton3.Click += drawShapeToolStripMenuItem_Click;
             // 
             // rectangleToolStripMenuItem1
             // 
             rectangleToolStripMenuItem1.Name = "rectangleToolStripMenuItem1";
-            rectangleToolStripMenuItem1.Size = new Size(126, 22);
+            rectangleToolStripMenuItem1.Size = new Size(180, 22);
             rectangleToolStripMenuItem1.Text = "Rectangle";
             rectangleToolStripMenuItem1.Click += rectangleToolStripMenuItem1_Click;
             // 
             // ellipseToolStripMenuItem1
             // 
             ellipseToolStripMenuItem1.Name = "ellipseToolStripMenuItem1";
-            ellipseToolStripMenuItem1.Size = new Size(126, 22);
+            ellipseToolStripMenuItem1.Size = new Size(180, 22);
             ellipseToolStripMenuItem1.Text = "Ellipse";
             ellipseToolStripMenuItem1.Click += ellipseToolStripMenuItem1_Click;
             // 
@@ -717,7 +724,7 @@
             toolStripButton4.ImageTransparentColor = Color.Magenta;
             toolStripButton4.Name = "toolStripButton4";
             toolStripButton4.Size = new Size(23, 40);
-            toolStripButton4.Text = "toolStripButton4";
+            toolStripButton4.Text = "Free Draw";
             toolStripButton4.Click += freeDrawToolStripMenuItem_Click;
             // 
             // toolStripLabel9
@@ -733,7 +740,7 @@
             toolStripButton5.ImageTransparentColor = Color.Magenta;
             toolStripButton5.Name = "toolStripButton5";
             toolStripButton5.Size = new Size(23, 40);
-            toolStripButton5.Text = "toolStripButton5";
+            toolStripButton5.Text = "Eraser";
             toolStripButton5.Click += eraserToolStripMenuItem_Click;
             // 
             // toolStripLabel10
