@@ -85,12 +85,13 @@ Michael Bielawski
 
 ## GUI Screenshots
 
-<img width="228" alt="Screenshot 2023-04-26 at 9 26 46 PM" src="https://user-images.githubusercontent.com/122567791/234740026-8ac07c98-e2a7-4c44-87d1-cefc3cf5f6ae.png">
-<img width="1439" alt="Screenshot 2023-04-26 at 9 26 27 PM" src="https://user-images.githubusercontent.com/122567791/234740029-53b58663-2ade-434b-a53d-5ca9fc5525e9.png">
-<img width="199" alt="Screenshot 2023-04-26 at 9 26 34 PM" src="https://user-images.githubusercontent.com/122567791/234740032-8f5a1b27-833d-4b77-8383-4f05aeb7fb50.png">
-<img width="269" alt="Screenshot 2023-04-26 at 9 26 51 PM" src="https://user-images.githubusercontent.com/122567791/234740034-435a1d87-6781-41c8-b7d8-3c084996358d.png">
-<img width="196" alt="Screenshot 2023-04-26 at 9 26 39 PM" src="https://user-images.githubusercontent.com/122567791/234740036-4c303974-90e4-4a0b-974d-0f19803de313.png">
-<img width="671" alt="Screenshot 2023-04-26 at 9 27 07 PM" src="https://user-images.githubusercontent.com/122567791/234740037-0fa61289-d416-41dc-b83a-11a7f49616b8.png">
+
+<img width="228" alt="Screenshot 2023-04-26 at 9 26 46 PM" src="https://user-images.githubusercontent.com/122567791/234746533-2e89b467-4dfd-4b58-85c2-e2560bb7d3e1.png">
+<img width="269" alt="Screenshot 2023-04-26 at 9 26 51 PM" src="https://user-images.githubusercontent.com/122567791/234746535-349cf2d4-76fb-4137-a285-db85017e1a13.png">
+<img width="1573" alt="Screenshot 2023-04-26 at 10 44 15 PM" src="https://user-images.githubusercontent.com/122567791/234746536-353992a8-acbc-4261-b4c3-b2a8a138f05d.png">
+<img width="199" alt="Screenshot 2023-04-26 at 9 26 34 PM" src="https://user-images.githubusercontent.com/122567791/234746538-37d1b66b-172d-4e00-9ec0-ca656bf370b2.png">
+<img width="196" alt="Screenshot 2023-04-26 at 9 26 39 PM" src="https://user-images.githubusercontent.com/122567791/234746542-b5a79b72-db35-4bd4-a123-5f4facd092a7.png">
+<img width="671" alt="Screenshot 2023-04-26 at 9 27 07 PM" src="https://user-images.githubusercontent.com/122567791/234746544-6c048bd9-21f5-4d5e-9cad-759b20f943dc.png">
 
 
 ## Acknowledgments
