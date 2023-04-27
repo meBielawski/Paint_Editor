@@ -74,10 +74,6 @@ Sometimes Undo and Redo act up and get lost in the stack. Some items will duplic
 
 I was not able to implement the shape deatils for shapes in the property grid. This will be something i will work towards rectifying in the future. 
 
-### Saving over an existing file
-
-I was not able to save over existing files. 
-
 
 ## Authors
 
