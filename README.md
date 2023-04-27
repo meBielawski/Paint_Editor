@@ -2,7 +2,7 @@
 
 ***PLEASE NOTE: You will have to open the program and build a release verison. I tried to figure out how to upload in but was not able to figure it out. ***
 
-This project serves as a simple paint editor that allows a user to create drawings and export them into SVG files. The user can save their work into bitmap files and load them up to continue at a later time. It allows users to draw shapes such as rectangles and Ellipses, and free draw lines. It also allows for users to erase their work and a Select feature with transform and delete capabilities
+This project serves as a simple paint editor that allows a user to create drawings and export them into SVG files. The user has the ability to save their work into bitmap files and load them up to continue at a later time. The program also allows users to draw shapes such as rectangles and Ellipses, and free draw lines. An erase function is also available to fix any mistakes in their work and a Select feature with transform and delete capabilities is also present, allowing them to move and resize the selected area or delete it altogeher.
 
 
 ## Getting Started
@@ -15,42 +15,42 @@ Visual Studio will be needed to run the code.
 
 The program has the following features:
 
-- Draw shapes (rectangle and ellipse)
-   it has the ability to draw 2 shapes, and have the shape be shown when drawing.
+- Draw shapes (rectangle and ellipse):
+   It has the ability to draw 2 shapes, and have the shape be shown when drawing.
    
-- Free draw
+- Free draw:
    Allows the user to draw whatever they want.
    
-- Eraser
-   Allows the user to erase what they have already drawn
+- Eraser:
+   Allows the user to erase what they have already drawn.
    
-- Thickness controls for marker and shape drawing
-   Allows the user to change the colours/thickness of lines using UI in the Toolstrip
+- Thickness controls for marker and shape drawing:
+   Allows the user to change the colours/thickness of lines using UI in the Toolstrip.
    
-- Undo/ Redo functionallity
+- Undo/ Redo functionallity:
    Allows the user to undo or redo an action.
    
-- Pointer location view  (bottom of screen)
-   Allows user to see the mouse location at any given time
+- Pointer location view  (bottom of screen):
+   Allows user to see the mouse location at any given time.
    
-- Item List and Property grid
-   just displays the lines and shapes created, with some details being shown when you select a shape or line
+- Item List and Property grid:
+   Just displays the lines and shapes created, with some details being shown when you select a shape or line.
    
-- Select feature with Transform and Delete option available on right click after selecting an area. 
+- Select feature with Transform and Delete option available on right click after selecting an area:
    Allows the user to select an area with a rectangle, then right click and transform or delete the selected area.
       Transform allows you to select a new area in the drawing area and resize/flip the orientation of the selected area based on mouse movement.
 
-- Item List and Property view
+- Item List and Property view:
    Allows user to see a list of lines or shapes they have drawn, and when selected, see the properties of that shape or line. 
 
-- Save, Open, and New
+- Save, Open, and New:
    Allows the users to save the current work to a bitmap file through the File menu. It also allows the User to open a bitmap file to continue
    working on. Should they wish to start something new, it will clear the picture area and all the info from previoulsy drawn items. 
 
-- Export to SVG
+- Export to SVG:
    Allows users to export the current drawing into an SVG file through the file menu.
    
-- Help
+- Help:
    A cute little help menu item that should provide a laugh to those in need. 
 
 
@@ -97,17 +97,18 @@ Michael Bielawski
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-https://www.w3schools.com/cs/index.php  --- used many of these for more background understanding.
-https://www.w3.org/  --- used for XML and finding the SVG namespace
-https://svgwg.org/svg2-draft/struct.html#Namespace  ----  SVG info
-https://svgwg.org/svg2-draft/refs.html#ref-xml-names  ---- SVG info
-https://www.flaticon.com/search?word=erase --- used to find icons
-https://www.dotnetperls.com/ --- more C# assistance and learning
-https://stackoverflow.com/questions/1060442/png-to-bmp-in-c-sharp  --- bitmap learning
-https://stackoverflow.com/questions/1053052/a-generic-error-occurred-in-gdi-jpeg-image-to-memorystream --- issue with memory stream for saving
-https://chat.openai.com/?model=gpt-4 --- assistance in modifying errors
-https://stackoverflow.com/questions/29717005/draw-a-rectangle --- select rectangle help.
-https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/getting-started-with-graphics-programming?view=netframeworkdesktop-4.8 -- lots of help dealing with graphics, also helped with using stream writer and XML writer
-https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc --- readme template
+- https://www.w3schools.com/cs/index.php  --- used many of these for more background understanding.
+- https://www.w3.org/  --- used for XML and finding the SVG namespace
+- https://svgwg.org/svg2-draft/struct.html#Namespace  ----  SVG info
+- https://svgwg.org/svg2-draft/refs.html#ref-xml-names  ---- SVG info
+- https://www.flaticon.com/search?word=erase --- used to find icons
+- https://www.dotnetperls.com/ --- more C# assistance and learning
+- https://stackoverflow.com/questions/1060442/png-to-bmp-in-c-sharp  --- bitmap learning
+- https://stackoverflow.com/questions/1053052/a-generic-error-occurred-in-gdi-jpeg-image-to-memorystream --- issue with memory stream for saving
+- https://chat.openai.com/?model=gpt-4 --- assistance in modifying errors
+- https://stackoverflow.com/questions/29717005/draw-a-rectangle --- select rectangle help.
+- https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/getting-started-with-graphics-programming?view=netframeworkdesktop-4.8 -- lots of help dealing with graphics, also helped with using stream writer and XML writer
+- https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc --- readme template
 
-chris diggins SVG editor program. Also big shoutout to Antoine for being such a good friend and helping me talk through some bug that i encountered.
+- Christopher Diggins' SVG editor program. --- served as a great inspiration.
+- Also big shoutout to Antoine for being such a good friend and helping me talk through some bug that i encountered.
