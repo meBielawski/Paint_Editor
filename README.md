@@ -58,7 +58,7 @@ The program has the following features:
 
 ## Known Bugs
 
-###Saving over an existing Document
+### Saving over an existing Document
 
 I could not figure out how to save over an existing document with the same name. 
 
